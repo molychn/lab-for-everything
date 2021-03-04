@@ -23,4 +23,8 @@ describe('add', () => {
   it('0.1 + 0.2 !== 0.3 ?', () => {
     assert.notStrictEqual(add(0.1, 0.2), 0.3)
   })
+  it('one of the items is -0', () => {
+    assert.strictEqual(add(-0, '1'), '-01')
+    assert.strictEqual(add('1', -0), '1-0')
+  })
 })
